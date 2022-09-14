@@ -1,0 +1,45 @@
+<div class="container mt-5 text-center">
+  <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#myModal">
+    Rellenar Formulario <i class="bi bi-bookmark"></i>
+  </button>
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Rellenar Formulario</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-left">
+          <form [formGroup]="formForm">
+            <p class="mb-0 mt-2">Nombre</p>
+            <div class="input-group">
+              <input formControlName="nombre" type="text" class="form-control"> <br>
+            </div>
+            <p class="mb-0 mt-2">Email</p>
+            <div class="input-group">
+              <input formControlName="email" type="text" class="form-control"> <br>
+            </div>
+            <div *ngIf="emailValidator == false" class="text-danger">
+              Invalid Email Format
+            </div>
+            <p class="mb-0 mt-2">Mensaje</p>
+            <div class="input-group">
+              <input formControlName="mensaje" type="text" class="form-control"> <br>
+            </div>
+            <p class="mb-0 mt-2">2 + 3 = ?</p>
+            <div class="input-group">
+              <input formControlName="captcha" type="text" class="form-control"> <br>
+            </div>
+            <div *ngIf="captchaValidator == false" class="text-danger">
+              Invalid Capthca Validation
+            </div>
+          </form>
+          <button (click)="guardarForm()" type="button" class="btn btn-dark mt-3">Guardar Form <i class="bi bi-save"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table [listado]="listado"></app-table>
+</div>
+
+<router-outlet></router-outlet>

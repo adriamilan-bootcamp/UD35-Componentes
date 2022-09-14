@@ -1,0 +1,18 @@
+<div *ngIf="listado != null;">
+    <table class="table mt-4">
+        <thead class="table-dark">
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Mensaje</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let form of listado">
+            <tr>
+                <td>{{form.nombre}}</td>
+                <td>{{form.email}}</td>
+                <td>{{form.mensaje}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
