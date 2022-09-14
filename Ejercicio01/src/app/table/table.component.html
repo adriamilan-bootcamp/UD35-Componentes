@@ -1,0 +1,20 @@
+<div *ngIf="listado != null;">
+    <table class="table mt-4">
+        <thead class="table-dark">
+            <tr>
+                <th>Nombre</th>
+                <th>CIF</th>
+                <th>Dirección</th>
+                <th>Grupo</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let cliente of listado">
+            <tr>
+                <td>{{cliente.nombre}}</td>
+                <td>{{cliente.cif}}</td>
+                <td>{{cliente.direccion}}</td>
+                <td>{{cliente.grupo}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
